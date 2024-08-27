@@ -1,0 +1,41 @@
+##Converting Pennies into different denominations from largest to smallest
+##Using the remainder to calculate the next denomination
+##Printing a final statement of how many dollars and cents are in the amount of pennies
+
+#Step 1: Divide the pennies into the highest possible denomintation
+#Work down to the least denomination possible
+#worked during class with teacher
+
+penny = int(input('Enter number of pennies:'))
+quarters = penny // 25
+print(f"Quarters: {quarters}")
+rem = penny % 25
+
+dimes = rem // 10
+print(f"Dimes: {dimes}")
+rem = rem % 10
+
+nickles = rem // 5
+print(f"Nickles: {nickles}")
+rem = rem % 5
+
+print(f"Pennies: {rem}")
+
+#Step 2: Convert the quantities into dollars and print money amount
+#Added on my own
+
+dollars_q = int(quarters * 0.25)  #turn quarters into dollars
+quarters_rem = int(quarters % 4)  #how may quarters are not a full dollar
+quarters_to_pennies = quarters_rem * 25  #turn those quarters to pennies
+
+cents = (dimes * 10) + (nickles * 5) + quarters_to_pennies + rem
+
+print(f"You have a total of ${dollars_q}.{cents}")
+
+#Now that I have gone the long way to practice class concepts
+#It can also be done simpler
+
+total_dollars = penny / 100
+print(f"You have a total of ${total_dollars}")
+
+# 8/26/2024 Rafael Ramirez-Gaston
