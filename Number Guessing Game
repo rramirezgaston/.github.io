@@ -1,0 +1,30 @@
+## Python
+## Game generates a random number and has the user guess it
+## Once the user guesses the number the game pints the amount of tries it took
+
+import random
+
+secret_number = random.randint(1, 100)
+guess = None
+tries = 0
+first_guess = True  # Flag to track the first guess
+
+while guess != secret_number:
+    try:
+        if first_guess:
+            guess = int(input('I am thinking of a number between 1 and 100, can you guess it?: '))
+            first_guess = False  # Set the flag to False after the first guess
+        else:
+            guess = int(input('Guess again: '))
+
+        if guess > secret_number:
+            tries += 1
+            print('Too high!')
+        elif guess < secret_number:
+            print('Too low!')
+            tries += 1
+    except ValueError:
+        print('Please enter a number only: ')
+        continue
+
+print(f'You got it in {tries} tries!')
