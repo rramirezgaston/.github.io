@@ -28,3 +28,5 @@ while guess != secret_number:
         continue
 
 print(f'You got it in {tries} tries!')
+
+# 10/03/2024 Rafael Ramirez-Gaston
